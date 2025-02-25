@@ -133,26 +133,29 @@ button:hover {
     margin: 40px auto;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
+    justify-content: center;
 }
 
 .project-card {
-    background: white;
-    color: black;
-    padding: 20px;
+    width: 300px;
+    background: #fff;
+    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -398,4 +401,56 @@ button[type="submit"]:hover {
     color: green;
     margin-top: 10px;
     display: none;
+}
+
+
+/* //changes */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.profile-pic {
+    width: 20vw; /* Use viewport width for responsive sizing */
+    height: 20vw; /* Maintain a square aspect ratio */
+    max-width: 240px; /* Limit the maximum size */
+    max-height: 200px; /* Limit the maximum size */
+    margin-right: 20px;
+    border-radius: 5%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 25vw; /* Increase size for smaller screens */
+        height: 25vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-pic {
+        width: 30vw; /* Further increase size for very small screens */
+        height: 30vw;
+        margin-right: 10px; /* Reduce margin for smaller screens */
+    }
+}
+
+.about-content {
+    flex: 1;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #0073b1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
 }

@@ -118,3 +118,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+function sendMail(){
+
+    let params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+    }
+
+    emailjs.send("service_e0636ff","template_row20aq",params).then(alert("Email has been sent."))
+}
+
+
+//TXwclUd67QEHQPuCn
+
